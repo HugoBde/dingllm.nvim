@@ -121,7 +121,7 @@ local function get_prompt(opts)
             vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes('<Esc>', false, true, true), 'nx', false)
         end
     else
-        prompt = M.get_lines_until_cursor()
+        prompt = vim.api.nvim_get_current_line()
         if replace then
             vim.api.nvim_feedkeys("0D", "nx", false)
         end
